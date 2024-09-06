@@ -255,9 +255,6 @@ def reward_function(params):
     
     if params['is_offtrack']:
         reward = 1e-3
-    
-    if params['distance_from_center'] > (params['track_width'] / 2.1):
-        reward = 1e-3
         
     print(params)
     print('reward: ', reward)

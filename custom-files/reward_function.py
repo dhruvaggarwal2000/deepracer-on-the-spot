@@ -232,10 +232,8 @@ def reward_function(params):
     car_y = params['y']
     optimal_path_coords, is_straight_road, is_switching_side = get_optimal_path_based_on_params(params)
     distance = calculate_distance_between_points(optimal_path_coords, (car_x, car_y))
-    if distance <= params['track_width']/3:
+    if distance <= params['track_width']/2:
         reward = 1.0
-    elif distance <= params['track_width']/2:
-        reward = 0.1
     else:
         reward = 1e-3
 
